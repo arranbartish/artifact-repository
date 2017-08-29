@@ -6,8 +6,6 @@ script:
 
 deploy:
   - provider: script
-    script:
-      - docker login -u="$DOCKER_USER" -p="$DOCKER_PASS"
-      - docker push arranbartish/artifact-repository;
+    script: docker login -u="$DOCKER_USER" -p="$DOCKER_PASS" && docker push arranbartish/artifact-repository;
     on:
       branch: master
