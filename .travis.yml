@@ -3,3 +3,10 @@ services:
   - docker
 script:
   - docker build -t artifact-repository .
+
+deploy:
+  - provider: script
+    script:
+      - docker login -u="$DOCKER_USER" -p="$DOCKER_PASS";
+    on:
+      branch: master
