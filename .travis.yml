@@ -1,8 +1,10 @@
 sudo: required
+
 services:
   - docker
+
 script:
-  - docker build -t artifact-repository .
+  - docker build -t $DOCKER_USER/artifact-repository .
 
 deploy:
   - provider: script
